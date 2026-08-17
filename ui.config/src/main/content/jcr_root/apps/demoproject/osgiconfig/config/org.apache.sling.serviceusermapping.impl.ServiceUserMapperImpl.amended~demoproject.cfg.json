@@ -1,0 +1,5 @@
+{
+    "user.mapping": [
+        "demoproject.core:asset-rendition=asset-rendition-service"
+    ]
+}

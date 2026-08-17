@@ -1,0 +1,113 @@
+<!-- ===================================================== -->
+<!-- CARD MODEL                                            -->
+<!-- ===================================================== -->
+
+<sly data-sly-use.card="com.demoproject.core.models.CardModel"/>
+
+
+<!-- ===================================================== -->
+<!-- CLIENT LIBRARY                                         -->
+<!-- ===================================================== -->
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+
+<sly data-sly-call="${clientlib.css @ categories='demoproject.cardcomponent'}"/>
+
+
+<!-- ===================================================== -->
+<!-- MAIN CARD                                             -->
+<!-- ===================================================== -->
+
+<div class="card-component">
+
+    <!-- LEFT SIDE -->
+
+    <div class="card-content">
+
+        <h2 data-sly-test="${card.title}">
+            ${card.title}
+        </h2>
+
+
+        <p data-sly-test="${card.description}">
+            ${card.description}
+        </p>
+
+
+        <a data-sly-test="${card.buttonLink}"
+           href="${card.buttonLink @ context='uri'}"
+           class="apply-btn">
+
+            ${card.buttonText}
+
+        </a>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="card-image"
+         data-sly-test="${card.fileReference}">
+
+        <img src="${card.fileReference @ context='uri'}"
+             alt="${card.title}"/>
+
+    </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- CARD ITEMS                                             -->
+<!-- ===================================================== -->
+
+<div class="card-items-section"
+     data-sly-test="${card.cardItems}">
+
+    <h2 class="card-items-heading">
+        Card Items
+    </h2>
+
+
+    <div class="card-items-list"
+         data-sly-list.item="${card.cardItems}">
+
+        <div class="card-item">
+
+
+            <!-- ========================================= -->
+            <!-- MULTIFIELD IMAGE / ICON                   -->
+            <!-- ========================================= -->
+
+            <div class="card-item-image"
+                 data-sly-test="${item.fileReference}">
+
+                <img src="${item.fileReference @ context='uri'}"
+                     alt="${item.title}"/>
+
+            </div>
+
+
+            <!-- ========================================= -->
+            <!-- MULTIFIELD CONTENT                        -->
+            <!-- ========================================= -->
+
+            <div class="card-item-content">
+
+                <h3 data-sly-test="${item.title}">
+                    ${item.title}
+                </h3>
+
+
+                <p data-sly-test="${item.description}">
+                    ${item.description}
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
