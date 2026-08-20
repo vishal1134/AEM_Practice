@@ -95,6 +95,11 @@ Import-Package: com.day.cq.wcm.api;version="[1.20,3)",javax.annotation;version=0
             <artifactId>core.wcm.components.core</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.14.0</version>
+</dependency>
 
 
         <!-- Testing -->

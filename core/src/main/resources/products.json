@@ -1,0 +1,79 @@
+{
+  "data": {
+    "productList": {
+      "items": [
+        {
+          "productName": "iphone17",
+          "productId": "PROD004",
+          "description": {
+            "html": "<p>It is kind of a mobile that only unique kind of peoples should have</p>\n",
+            "markdown": "It is kind of a mobile that only unique kind of peoples should have\n",
+            "plaintext": "It is kind of a mobile that only unique kind of peoples should have",
+            "json": [
+              {
+                "nodeType": "paragraph",
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "It is kind of a mobile that only unique kind of peoples should have"
+                  }
+                ]
+              }
+            ]
+          },
+          "price": 16999,
+          "category": "Mobile",
+          "productImage": {
+            "_path": "/content/dam/demoproject/MonkeyDLuffy.png"
+          }
+        },
+        {
+          "productName": "Lenovo ThinkPad",
+          "productId": "PROD005",
+          "description": {
+            "html": "<p>The new Lenovo ThinkPad. Very well designed and very powerful in work.</p>\n",
+            "markdown": "The new Lenovo ThinkPad. Very well designed and very powerful in work.\n",
+            "plaintext": "The new Lenovo ThinkPad. Very well designed and very powerful in work.",
+            "json": [
+              {
+                "nodeType": "paragraph",
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "The new Lenovo ThinkPad. Very well designed and very powerful in work."
+                  }
+                ]
+              }
+            ]
+          },
+          "price": 85489,
+          "category": "Laptop",
+          "productImage": null
+        },
+        {
+          "productName": "Apple Watch",
+          "productId": "PROD006",
+          "description": {
+            "html": "<p>Nothing much.... Just time!.</p>\n",
+            "markdown": "Nothing much.... Just time!.\n",
+            "plaintext": "Nothing much.... Just time!.",
+            "json": [
+              {
+                "nodeType": "paragraph",
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Nothing much.... Just time!."
+                  }
+                ]
+              }
+            ]
+          },
+          "price": 33993,
+          "category": "Watch",
+          "productImage": null
+        }
+      ]
+    }
+  }
+}
