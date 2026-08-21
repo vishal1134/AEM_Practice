@@ -1,0 +1,780 @@
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    box-sizing: border-box;
+}
+
+.site-header *,
+.site-header *::before,
+.site-header *::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER INNER
+   ========================================================= */
+
+.header-inner {
+    width: 100%;
+    min-height: 82px;
+
+    padding: 0 5.5%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.header-logo {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    margin-right: 35px;
+}
+
+.header-logo-image {
+    display: block;
+
+    width: 135px;
+    height: auto;
+
+    max-height: 55px;
+
+    object-fit: contain;
+}
+
+.header-logo-text {
+    display: block;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #123b70;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+   ========================================================= */
+
+.main-navigation {
+    flex: 1 1 auto;
+
+    height: 82px;
+}
+
+.main-navigation-list {
+    height: 82px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 38px;
+
+    list-style: none;
+}
+
+.nav-item {
+    position: static;
+
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    height: 100%;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0;
+
+    border-bottom: 3px solid transparent;
+
+    color: #07145f;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* =========================================================
+   NAV LINK HOVER / OPEN
+   ========================================================= */
+
+.nav-link:hover,
+.nav-item.is-open > .nav-link,
+.nav-item:focus-within > .nav-link {
+    color: #ed1b2f;
+
+    border-bottom-color: #ed1b2f;
+}
+
+
+.nav-arrow {
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 15px;
+
+    line-height: 1;
+}
+
+.nav-arrow span {
+    display: inline-block;
+}
+
+
+/* =========================================================
+   MEGA MENU
+   ========================================================= */
+
+.mega-menu {
+    position: absolute;
+
+    top: 82px;
+    left: 50%;
+
+    width: min(825px, calc(100vw - 40px));
+
+    padding: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e5ec;
+    border-radius: 28px;
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translate(-50%, -10px);
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   SHOW MEGA MENU
+   ========================================================= */
+
+.nav-item:hover > .mega-menu,
+.nav-item:focus-within > .mega-menu,
+.nav-item.is-open > .mega-menu {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translate(-50%, 0);
+}
+
+
+/* =========================================================
+   MEGA MENU INNER
+   ========================================================= */
+
+.mega-menu-inner {
+    width: 100%;
+
+    min-height: 390px;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   MEGA MENU TITLE
+   ========================================================= */
+
+.mega-menu-title {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 30px 38px;
+
+    background: #eef2fa;
+
+    color: #292929;
+
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.mega-menu-arrow {
+    font-size: 32px;
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   MEGA MENU BODY
+   ========================================================= */
+
+.mega-menu-body {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 38% 62%;
+
+    min-height: 320px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   LEFT SIDE - CATEGORIES
+   ========================================================= */
+
+.mega-menu-categories {
+    padding: 18px 18px 25px;
+
+    background: #f4f6fb;
+
+    border-right: 1px solid #e1e4eb;
+}
+
+.category-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.category-item {
+    position: static;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   CATEGORY LINK
+   ========================================================= */
+
+.category-link {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 15px 20px;
+
+    border-radius: 18px;
+
+    color: #252525;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* =========================================================
+   ACTIVE CATEGORY
+   ========================================================= */
+
+.category-link:hover,
+.category-item.is-active .category-link {
+    background: #ffffff;
+
+    color: #123b70;
+}
+
+
+/* =========================================================
+   CHILD LIST
+   =========================================================
+
+   IMPORTANT STRUCTURE:
+
+   Accounts
+      └── child-list
+          ├── Savings
+          ├── abd
+          └── dsa
+
+   qwerty
+      └── child-list
+          ├── werty
+          └── zxcv
+
+   Every category has its own child-list.
+
+   The child-list is positioned inside the RIGHT
+   side of the mega menu.
+   ========================================================= */
+
+.category-item .child-list {
+    position: absolute;
+
+    top: 0;
+
+    left: 38%;
+
+    width: 62%;
+
+    min-height: 320px;
+
+    margin: 0;
+
+    padding: 34px 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0;
+
+    list-style: none;
+
+    background: #ffffff;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.15s ease,
+        visibility 0.15s ease;
+}
+
+
+/* =========================================================
+   DEFAULT FIRST CATEGORY
+   =========================================================
+
+   Accounts is the first category.
+
+   Therefore its child items are visible when
+   the mega menu initially opens.
+   ========================================================= */
+
+.category-item:first-child .child-list {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   ACTIVE CATEGORY CHILD LIST
+   ========================================================= */
+
+.category-item.is-active .child-list {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   HOVER CATEGORY CHILD LIST
+   ========================================================= */
+
+.category-item:hover .child-list {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   HIDE DEFAULT ACCOUNTS WHEN ANOTHER CATEGORY
+   IS HOVERED
+   ========================================================= */
+
+/*
+   Example:
+
+   Accounts
+      Savings
+      abd
+      dsa
+
+   When qwerty is hovered:
+
+   Accounts
+   qwerty
+      werty
+      zxcv
+
+   :has() allows us to detect that another
+   category is currently being hovered.
+*/
+
+.category-list:has(.category-item:hover)
+    .category-item:first-child:not(:hover) .child-list {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HIDE DEFAULT ACCOUNTS WHEN ANOTHER CATEGORY
+   IS ACTIVE
+   ========================================================= */
+
+.category-list:has(.category-item.is-active)
+    .category-item:first-child:not(.is-active) .child-list {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CHILD ITEM
+   ========================================================= */
+
+.child-item {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   CHILD LINK
+   ========================================================= */
+
+.child-link {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 10px 0;
+
+    color: #222222;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   CHILD LINK HOVER
+   ========================================================= */
+
+.child-link:hover {
+    color: #123b70;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.header-search {
+    flex: 0 0 auto;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #111111;
+
+    cursor: pointer;
+}
+
+.search-icon {
+    font-size: 31px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.login-button {
+    flex: 0 0 auto;
+
+    min-width: 120px;
+
+    height: 48px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 26px;
+
+    background: #ed1b2f;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.login-button:hover {
+    background: #d91428;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+.login-icon {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .header-inner {
+        padding: 0 25px;
+
+        gap: 18px;
+    }
+
+    .header-logo {
+        margin-right: 15px;
+    }
+
+    .main-navigation-list {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .mega-menu {
+        width: min(825px, calc(100vw - 30px));
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .header-inner {
+        min-height: 70px;
+    }
+
+    .main-navigation {
+        height: 70px;
+    }
+
+    .main-navigation-list {
+        height: 70px;
+
+        gap: 15px;
+    }
+
+    .nav-item {
+        height: 70px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .mega-menu {
+        top: 70px;
+
+        width: calc(100vw - 20px);
+
+        border-radius: 20px;
+    }
+
+    .mega-menu-body {
+        grid-template-columns: 35% 65%;
+    }
+
+    .mega-menu-title {
+        padding: 24px 25px;
+
+        font-size: 23px;
+    }
+
+    .mega-menu-categories {
+        padding: 12px;
+    }
+
+    .category-link {
+        min-height: 50px;
+
+        padding: 14px;
+
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE CHILD LIST
+       ===================================================== */
+
+    .category-item .child-list {
+        left: 35%;
+
+        width: 65%;
+
+        min-height: 320px;
+
+        padding: 30px 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .child-link {
+        min-height: 50px;
+
+        font-size: 15px;
+    }
+
+
+    .login-button {
+        min-width: 90px;
+
+        height: 42px;
+
+        padding: 0 15px;
+    }
+}
+
+
+/* =========================================================
+   AEM AUTHORING SAFETY
+   ========================================================= */
+
+.cq-Editable-dom .mega-menu {
+    z-index: 9999;
+}

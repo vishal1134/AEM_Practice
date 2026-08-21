@@ -1,0 +1,290 @@
+<sly
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+
+    <sly data-sly-call="${clientlib.css @ categories='demoproject.header'}"></sly>
+    <sly data-sly-call="${clientlib.js @ categories='demoproject.header'}"></sly>
+
+</sly>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+
+        <!-- =================================================
+             LOGO
+             ================================================= -->
+
+        <a
+            href="/"
+            class="header-logo">
+
+            <img
+                class="header-logo-image"
+                src="${properties.fileReference}"
+                alt="${properties.logoAlt || 'Demo Project'}"
+                data-sly-test="${properties.fileReference}" />
+
+            <span
+                class="header-logo-text"
+                data-sly-test="${!properties.fileReference}">
+                Demo Project
+            </span>
+
+        </a>
+
+
+        <!-- =================================================
+             MAIN NAVIGATION
+             ================================================= -->
+
+        <nav
+            class="main-navigation"
+            aria-label="Main navigation">
+
+            <ul class="main-navigation-list">
+
+
+                <!-- =================================================
+                     HEADER ITEM CONTAINER
+                     ================================================= -->
+
+                <sly
+                    data-sly-list.container="${resource.listChildren}">
+
+                    <sly
+                        data-sly-test="${container.name == 'item'}">
+
+                        <!-- =================================================
+                             MAIN NAV ITEMS
+                             ================================================= -->
+
+                        <sly
+                            data-sly-list.navItem="${container.listChildren}">
+
+                            <li class="nav-item">
+
+
+                                <!-- =================================================
+                                     MAIN NAVIGATION LINK
+                                     ================================================= -->
+
+                                <a
+                                    class="nav-link"
+                                    href="${navItem.valueMap.link || '#'}"
+                                    data-sly-test="${navItem.valueMap.label}">
+
+                                    <span>
+                                        ${navItem.valueMap.label}
+                                    </span>
+
+
+                                    <!-- DROPDOWN ARROW -->
+
+                                    <sly
+                                        data-sly-list.navChild="${navItem.listChildren}">
+
+                                        <span
+                                            class="nav-arrow"
+                                            data-sly-test="${navChild.name == 'dropdownItems'}">
+
+                                            <span>⌄</span>
+
+                                        </span>
+
+                                    </sly>
+
+                                </a>
+
+
+                                <!-- =================================================
+                                     MEGA MENU
+                                     ================================================= -->
+
+                                <sly
+                                    data-sly-list.navChild="${navItem.listChildren}">
+
+                                    <sly
+                                        data-sly-test="${navChild.name == 'dropdownItems'}">
+
+                                        <div class="mega-menu">
+
+
+                                            <!-- =================================================
+                                                 MEGA MENU INNER
+                                                 ================================================= -->
+
+                                            <div class="mega-menu-inner">
+
+
+                                                <!-- =================================================
+                                                     MEGA MENU TITLE
+                                                     ================================================= -->
+
+                                                <div class="mega-menu-title">
+
+                                                    <span>
+                                                        Discover ${navItem.valueMap.label}
+                                                    </span>
+
+                                                    <span class="mega-menu-arrow">
+                                                        →
+                                                    </span>
+
+                                                </div>
+
+
+                                                <!-- =================================================
+                                                     MEGA MENU BODY
+                                                     ================================================= -->
+
+                                                <div class="mega-menu-body">
+
+
+                                                    <!-- =================================================
+                                                         LEFT SIDE - CATEGORIES
+                                                         ================================================= -->
+
+                                                    <div class="mega-menu-categories">
+
+                                                        <ul class="category-list">
+
+
+                                                            <!-- EACH DROPDOWN CATEGORY -->
+
+                                                            <sly
+                                                                data-sly-list.dropdownItem="${navChild.listChildren}">
+
+                                                                <li
+                                                                    class="category-item"
+                                                                    data-category="${dropdownItem.name}">
+
+
+                                                                    <!-- CATEGORY LINK -->
+
+                                                                    <a
+                                                                        class="category-link"
+                                                                        href="${dropdownItem.valueMap.link || '#'}"
+                                                                        data-sly-test="${dropdownItem.valueMap.label}">
+
+                                                                        ${dropdownItem.valueMap.label}
+
+                                                                    </a>
+
+
+                                                                    <!-- =================================================
+                                                                         CHILD ITEMS FOR THIS CATEGORY
+                                                                         ================================================= -->
+
+                                                                    <sly
+                                                                        data-sly-list.childContainer="${dropdownItem.listChildren}">
+
+                                                                        <sly
+                                                                            data-sly-test="${childContainer.name == 'childItems'}">
+
+                                                                            <ul class="child-list">
+
+
+                                                                                <sly
+                                                                                    data-sly-list.childItem="${childContainer.listChildren}">
+
+                                                                                    <li class="child-item">
+
+                                                                                        <a
+                                                                                            class="child-link"
+                                                                                            href="${childItem.valueMap.link || '#'}"
+                                                                                            data-sly-test="${childItem.valueMap.label}">
+
+                                                                                            ${childItem.valueMap.label}
+
+                                                                                        </a>
+
+                                                                                    </li>
+
+                                                                                </sly>
+
+
+                                                                            </ul>
+
+                                                                        </sly>
+
+                                                                    </sly>
+
+
+                                                                </li>
+
+                                                            </sly>
+
+
+                                                        </ul>
+
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </sly>
+
+                                </sly>
+
+
+                            </li>
+
+                        </sly>
+
+                    </sly>
+
+                </sly>
+
+
+            </ul>
+
+        </nav>
+
+
+        <!-- =================================================
+             SEARCH
+             ================================================= -->
+
+        <button
+            type="button"
+            class="header-search"
+            aria-label="Search">
+
+            <span class="search-icon">
+                ⌕
+            </span>
+
+        </button>
+
+
+        <!-- =================================================
+             LOGIN
+             ================================================= -->
+
+        <a
+            href="${properties.loginLink || '#'}"
+            class="login-button">
+
+            
+
+            <span>
+                ${properties.loginText || 'Login'}
+            </span>
+
+        </a>
+
+
+    </div>
+
+</header>
