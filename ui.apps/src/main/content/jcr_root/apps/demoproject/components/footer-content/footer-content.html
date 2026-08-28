@@ -1,0 +1,199 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='demoproject.footer-content'}"/>
+
+<footer class="cmp-footer-wrapper">
+
+<!-- ================= TIER 1: ALL COLUMNS & LINKS ================= -->
+<div class="cmp-footer-tier1">
+    <sly data-sly-list.sectionContainer="${resource.children}">
+        <sly data-sly-test="${sectionContainer.name == 'sections'}">
+            
+            <!-- TOP BOX: Horizontal Inline Sections -->
+            <div class="cmp-footer-horizontal-box">
+                <sly data-sly-list.section="${sectionContainer.children}">
+                    <div data-sly-test="${section.properties.displayMode == 'inline'}" 
+                         class="cmp-footer-content cmp-footer-content--inline">
+                        <h3 data-sly-test="${section.properties.title}" class="cmp-footer-content__title">
+                            <a data-sly-unwrap="${!section.properties.titleLink}" 
+                               href="${section.properties.titleLink}" 
+                               class="cmp-footer-content__title-link">
+                                ${section.properties.title}
+                            </a>
+                        </h3>
+                        
+                        <sly data-sly-list.linksContainer="${section.children}">
+                            <sly data-sly-test="${linksContainer.name == 'links'}">
+                                <ul class="cmp-footer-content__links">
+                                    <sly data-sly-list.link="${linksContainer.children}">
+                                        <li data-sly-test="${link.properties.label}" class="cmp-footer-content__link-item">
+                                            <a href="${link.properties.url || '#'}" class="cmp-footer-content__link">
+                                                ${link.properties.label}
+                                            </a>
+                                            <span data-sly-test="${!linkList.last}" class="cmp-footer-content__separator">|</span>
+                                        </li>
+                                    </sly>
+                                </ul>
+                            </sly>
+                        </sly>
+                    </div>
+                </sly>
+            </div>
+
+            <!-- BOTTOM BOX: Vertical Column Sections -->
+            <div class="cmp-footer-vertical-box">
+                <sly data-sly-list.section="${sectionContainer.children}">
+                    <div data-sly-test="${section.properties.displayMode == 'column'}" 
+                         class="cmp-footer-content cmp-footer-content--column">
+                        <h3 data-sly-test="${section.properties.title}" class="cmp-footer-content__title">
+                            <a data-sly-unwrap="${!section.properties.titleLink}" 
+                               href="${section.properties.titleLink}" 
+                               class="cmp-footer-content__title-link">
+                                ${section.properties.title}
+                            </a>
+                        </h3>
+                        <sly data-sly-list.linksContainer="${section.children}">
+                            <sly data-sly-test="${linksContainer.name == 'links'}">
+                                <ul class="cmp-footer-content__links">
+                                    <sly data-sly-list.link="${linksContainer.children}">
+                                        <li data-sly-test="${link.properties.label}" class="cmp-footer-content__link-item">
+                                            <a href="${link.properties.url || '#'}" class="cmp-footer-content__link">
+                                                ${link.properties.label}
+                                            </a>
+                                        </li>
+                                    </sly>
+                                </ul>
+                            </sly>
+                        </sly>
+                    </div>
+                </sly>
+            </div>
+
+        </sly>
+    </sly>
+</div>
+
+<!-- ================= TIER 2: CONNECT, APPS, BADGES & DROPDOWN ================= -->
+<div class="cmp-footer-tier2">
+    <div class="cmp-footer-tier2__container">
+
+        <!-- Section 1: Connect With Us & Social Links -->
+        <sly data-sly-list.tier2Container="${resource.children}">
+            <sly data-sly-test="${tier2Container.name == 'tier2Sections'}">
+                <sly data-sly-list.tier2Section="${tier2Container.children}">
+                    
+                    <div class="cmp-footer-tier2__social-block">
+                        <span class="cmp-footer-tier2__title" data-sly-test="${tier2Section.properties.connectTitle}">
+                            ${tier2Section.properties.connectTitle}
+                        </span>
+
+                        <sly data-sly-list.socialContainer="${tier2Section.children}">
+                            <sly data-sly-test="${socialContainer.name == 'socialLinks'}">
+                                <ul class="cmp-footer-tier2__social-list">
+                                    <sly data-sly-list.social="${socialContainer.children}">
+                                        <li class="cmp-footer-tier2__social-item">
+                                            
+                                            <!-- Render Link ONLY if url exists AND is not '#' -->
+                                            <a data-sly-test="${social.properties.url && social.properties.url != '#'}" 
+                                               href="${social.properties.url}" target="_blank">
+                                                <img data-sly-test="${social.properties.iconClass}" 
+                                                     src="${social.properties.iconClass}" 
+                                                     alt="${social.properties.label}"/>
+                                            </a>
+
+                                            <!-- Render Static Image if url is missing OR equal to '#' -->
+                                            <sly data-sly-test="${!social.properties.url || social.properties.url == '#'}">
+                                                <img data-sly-test="${social.properties.iconClass}" 
+                                                     src="${social.properties.iconClass}" 
+                                                     alt="${social.properties.label}"/>
+                                            </sly>
+
+                                        </li>
+                                    </sly>
+                                </ul>
+                            </sly>
+                        </sly>
+                    </div>
+
+                </sly>
+            </sly>
+        </sly>
+
+        <!-- Section 2: Install App Badges -->
+        <div class="cmp-footer-tier2__app-block" data-sly-test="${properties.appTitle || properties.playStoreUrl}">
+            <span class="cmp-footer-tier2__title" data-sly-test="${properties.appTitle}">
+                ${properties.appTitle}
+            </span>
+            <div class="cmp-footer-tier2__app-badges">
+                <a data-sly-test="${properties.playStoreUrl}" href="${properties.playStoreUrl}" target="_blank">
+                    <img src="/content/dam/demoproject/google-play.png" alt="Google Play"/>
+                </a>
+                <a data-sly-test="${properties.appStoreUrl}" href="${properties.appStoreUrl}" target="_blank">
+                    <img src="/content/dam/demoproject/app-store.png" alt="App Store"/>
+                </a>
+            </div>
+        </div>
+
+        <!-- Section 3: Security Logos (Static Images Only) -->
+        <div class="cmp-footer-tier2__security-block" data-sly-test="${properties.entrustImg || properties.verisignImg}">
+            <img data-sly-test="${properties.entrustImg}" src="${properties.entrustImg}" alt="Entrust"/>
+            <img data-sly-test="${properties.verisignImg}" src="${properties.verisignImg}" alt="VeriSign"/>
+        </div>
+
+        <!-- Section 4: Dropdown -->
+        <div class="cmp-footer-tier2__dropdown-block">
+            <div class="cmp-footer-tier2__select-wrapper">
+                <select class="cmp-footer-tier2__select" onchange="if (this.value) window.open(this.value, '_blank');">
+                    <option value="" selected disabled>${properties.dropdownLabel || 'Kotak Group Companies'}</option>
+                    
+                    <sly data-sly-list.tier2Container="${resource.children}">
+                        <sly data-sly-test="${tier2Container.name == 'tier2Sections'}">
+                            <sly data-sly-list.tier2Section="${tier2Container.children}">
+                                <sly data-sly-list.groupContainer="${tier2Section.children}">
+                                    <sly data-sly-test="${groupContainer.name == 'groupcompanies' || groupContainer.name == 'groupCompanies'}">
+                                        <sly data-sly-list.company="${groupContainer.children}">
+                                            <option data-sly-test="${company.properties.label || company.properties.companyName}" 
+                                                    value="${company.properties.link || company.properties.url || '#'}">
+                                                ${company.properties.label || company.properties.companyName}
+                                            </option>
+                                        </sly>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </sly>
+                    </sly>
+                </select>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ================= TIER 3: COPYRIGHT & POLICY LINKS ================= -->
+<div class="cmp-footer-tier3">
+    <div class="cmp-footer-tier3__container">
+
+        <!-- Copyright Line Text -->
+        <span class="cmp-footer-tier3__text" data-sly-test="${properties.copyrightText}">
+            ${properties.copyrightText}
+        </span>
+
+        <!-- Multifield Links Loop -->
+        <sly data-sly-list.tier3Container="${resource.children}">
+            <sly data-sly-test="${tier3Container.name == 'links'}">
+                <ul class="cmp-footer-tier3__links">
+                    <sly data-sly-list.linkItem="${tier3Container.children}">
+                        <li class="cmp-footer-tier3__link-item" data-sly-test="${linkItem.properties.label}">
+                            <span class="cmp-footer-tier3__separator">|</span>
+                            <a href="${linkItem.properties.url || linkItem.properties.link || '#'}" class="cmp-footer-tier3__link">
+                                ${linkItem.properties.label}
+                            </a>
+                        </li>
+                    </sly>
+                </ul>
+            </sly>
+        </sly>
+
+    </div>
+</div>
+
+</footer>

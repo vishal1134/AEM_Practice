@@ -1,0 +1,454 @@
+/* ==========================================================================
+   TIER 1: MAIN WRAPPER & CONTAINER
+   ========================================================================== */
+.cmp-footer-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding-bottom: 40px; 
+}
+
+.cmp-footer-tier1 {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   1. TOP HORIZONTAL INLINE BOX (Compact Version)
+   -------------------------------------------------------------------------- */
+.cmp-footer-horizontal-box {
+    background-color: #f5f5f5;
+    padding: 16px 36px 4px 36px !important; /* Reduced top & bottom padding of container */
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cmp-footer-content--inline {
+    width: 100%;
+    padding-bottom: 8px !important;  /* Reduced space above divider line */
+    margin-bottom: 8px !important;   /* Reduced space below divider line */
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.cmp-footer-content--inline:last-child {
+    border-bottom: none;
+    margin-bottom: 0 !important;
+    padding-bottom: 8px !important;
+}
+
+/* Titles & Title Links Reset */
+.cmp-footer-content--inline .cmp-footer-content__title,
+.cmp-footer-content--inline .cmp-footer-content__title a,
+.cmp-footer-content--inline .cmp-footer-content__title-link {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+    margin: 0 0 4px 0 !important; /* Reduced space directly below title */
+    line-height: 1.2 !important;   /* Tightened line-height */
+    display: inline-block !important;
+}
+
+/* Horizontal Links List */
+.cmp-footer-content--inline .cmp-footer-content__links {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    row-gap: 2px !important;       /* Tightened spacing if links wrap into multiple lines */
+}
+
+.cmp-footer-content--inline .cmp-footer-content__separator {
+    display: inline-block !important;
+    margin: 0 6px !important;      /* Slightly reduced horizontal separator padding */
+    color: #999999;
+}
+
+.cmp-footer-content--inline .cmp-footer-content__link {
+    color: #555555 !important;
+    font-size: 13px !important;    /* Adjusted font size for compact alignment */
+    line-height: 1.2 !important;   /* Tightened text line height */
+    text-decoration: none !important;
+}
+
+.cmp-footer-content--inline .cmp-footer-content__link:hover {
+    color: #004b8d !important;
+    text-decoration: underline !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. BOTTOM VERTICAL COLUMNS BOX
+   -------------------------------------------------------------------------- */
+.cmp-footer-vertical-box {
+    background-color: #f5f5f5;
+    padding: 32px 36px;
+    column-count: 6;
+    column-gap: 20px;
+    box-sizing: border-box;
+    border-top: 10px solid #ffffff;
+}
+
+.cmp-footer-content--column {
+    break-inside: avoid;
+    display: block;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Titles and Title Links Reset */
+.cmp-footer-content--column .cmp-footer-content__title,
+.cmp-footer-content--column .cmp-footer-content__title a,
+.cmp-footer-content--column .cmp-footer-content__title-link {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+    margin: 0 0 4px 0 !important;
+    line-height: 1.1 !important;
+    display: inline-block !important;
+}
+
+.cmp-footer-content--column .cmp-footer-content__title a:hover,
+.cmp-footer-content--column .cmp-footer-content__title-link:hover {
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+
+/* Vertical Links List */
+.cmp-footer-content--column .cmp-footer-content__links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.cmp-footer-content--column .cmp-footer-content__link-item {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.cmp-footer-content--column .cmp-footer-content__separator {
+    display: none !important;
+}
+
+.cmp-footer-content--column .cmp-footer-content__link {
+    color: #666666 !important;
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.cmp-footer-content--column .cmp-footer-content__link:hover {
+    color: #004b8d !important;
+    text-decoration: underline !important;
+}
+/* ==========================================================================
+   TIER 2 MAIN WRAPPER & GRID (STRICT EQUAL 4 COLUMNS)
+   ========================================================================== */
+.cmp-footer-tier2 {
+    width: 100% !important;
+    background-color: #f5f5f5 !important;
+    padding: 24px 0 !important;
+    border-top: 1px solid #e2e2e2 !important;
+    box-sizing: border-box !important;
+    font-family: Arial, sans-serif !important;
+}
+
+/* Force container to split into 4 equal 25% columns */
+.cmp-footer-tier2__container {
+    width: 100% !important;
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important; /* 4 strict equal columns */
+    column-gap: 24px !important;
+    row-gap: 0 !important;
+    align-items: end !important; /* Baseline aligns all columns to bottom */
+    box-sizing: border-box !important;
+}
+
+/* Clear AEM Component Wrapper interference if present */
+.cmp-footer-tier2__container > div {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+}
+
+/* Standard Header for Columns 1 & 2 */
+.cmp-footer-tier2__title {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #222222 !important;
+    margin: 0 0 10px 0 !important;
+    display: block !important;
+    line-height: 1.2 !important;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 1: CONNECT WITH US
+   -------------------------------------------------------------------------- */
+.cmp-footer-tier2__social-block {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    margin-top: auto !important;
+}
+
+.cmp-footer-tier2__social-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+}
+
+.cmp-footer-tier2__social-item img {
+    height: 22px !important;
+    width: auto !important;
+    display: block !important;
+    filter: grayscale(100%) !important;
+    opacity: 0.75 !important;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 2: INSTALL APP
+   -------------------------------------------------------------------------- */
+.cmp-footer-tier2__app-block {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    margin-top: auto !important;
+}
+
+.cmp-footer-tier2__app-badges {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.cmp-footer-tier2__app-badges img {
+    height: 36px !important;
+    width: auto !important;
+    display: block !important;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 3: SECURITY BADGES
+   -------------------------------------------------------------------------- */
+.cmp-footer-tier2__security-block {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: auto !important;
+    pointer-events: none !important;
+}
+
+.cmp-footer-tier2__security-block img {
+    height: 26px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMN 4: KOTAK GROUP COMPANIES DROPDOWN
+   -------------------------------------------------------------------------- */
+.cmp-footer-tier2__dropdown-block {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-end !important;
+    width: 100% !important;
+    margin-top: auto !important;
+    position: relative !important; /* Required to position the arrow */
+}
+
+/* Force a CSS Down Arrow using ::after on the container */
+.cmp-footer-tier2__dropdown-block::after {
+    content: '' !important;
+    position: absolute !important;
+    right: 14px !important;
+    bottom: 16px !important; /* Vertically aligns arrow inside the 38px height */
+    width: 0 !important;
+    height: 0 !important;
+    
+    /* Draws a pure CSS down arrow */
+    border-left: 5px solid transparent !important;
+    border-right: 5px solid transparent !important;
+    border-top: 6px solid #333333 !important;
+    
+    pointer-events: none !important; /* Clicks pass straight through to the select box */
+    z-index: 10 !important;
+}
+
+/* Base Select Box Reset */
+.cmp-footer-tier2__select {
+    width: 100% !important;
+    max-width: 240px !important;
+    height: 38px !important;
+    padding: 0 36px 0 12px !important;
+    margin: 0 !important;
+    
+    font-family: Arial, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #333333 !important;
+    background-color: #ffffff !important;
+    
+    border: 1px solid #cccccc !important;
+    border-radius: 2px !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    outline: none !important;
+
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+}
+
+.cmp-footer-tier2__select:hover,
+.cmp-footer-tier2__select:focus {
+    border-color: #999999 !important;
+    outline: none !important;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 992px) {
+    .cmp-footer-tier2__container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 24px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .cmp-footer-tier2__container {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .cmp-footer-tier2__dropdown-block {
+        justify-content: flex-start !important;
+    }
+    
+    .cmp-footer-tier2__select {
+        max-width: 100% !important;
+    }
+}
+/* ================= TIER 3: COPYRIGHT BOTTOM BAND ================= */
+.cmp-footer-tier3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    clear: both;
+    background-color: #dcdcdc; /* Darker grey full-width band */
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.cmp-footer-tier3__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.cmp-footer-tier3__text {
+    font-size: 11px;
+    color: #444444;
+    font-weight: 400;
+}
+
+.cmp-footer-tier3__links {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cmp-footer-tier3__link-item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.cmp-footer-tier3__link {
+    color: #444444;
+    text-decoration: none;
+}
+
+.cmp-footer-tier3__link:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.cmp-footer-tier3__separator {
+    margin: 0 8px;
+    color: #666666;
+    font-size: 12px;
+}
+
+/* ==========================================================================
+   GLOBAL HOVER RESET (Removes underlines everywhere on hover)
+   ========================================================================== */
+
+/* 1. Remove hover underline on Horizontal Inline Links & Titles */
+.cmp-footer-horizontal-box a:hover,
+.cmp-footer-content--inline a:hover,
+.cmp-footer-content--inline .cmp-footer-content__link:hover,
+.cmp-footer-content--inline .cmp-footer-content__title-link:hover {
+    text-decoration: none !important;
+    color: #004b8d !important; /* Keeps hover color change, adjust as needed */
+}
+
+/* 2. Remove hover underline on Vertical Column Links & Titles */
+.cmp-footer-vertical-box a:hover,
+.cmp-footer-content--column a:hover,
+.cmp-footer-content--column .cmp-footer-content__link:hover,
+.cmp-footer-content--column .cmp-footer-content__title-link:hover {
+    text-decoration: none !important;
+    color: #004b8d !important; /* Keeps hover color change, adjust as needed */
+}
+
+/* Hide screen-reader accessibility text added by target="_blank" links */
+.cmp-footer-wrapper a [class*="screen-reader"],
+.cmp-footer-wrapper a span[class*="sr-only"],
+.cmp-footer-wrapper a span:only-child,
+.cmp-footer-wrapper a > span {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
