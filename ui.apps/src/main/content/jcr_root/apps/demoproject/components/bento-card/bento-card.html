@@ -1,0 +1,13 @@
+<article class="cmp-bento-card">
+    <div class="cmp-bento-card__image" data-sly-test="${properties.fileReference}">
+        <img src="${properties.fileReference @ context='uri'}" alt="${properties.title}" loading="lazy"/>
+    </div>
+    <div class="cmp-bento-card__content">
+        <p class="cmp-bento-card__eyebrow" data-sly-test="${properties.eyebrow}">${properties.eyebrow}</p>
+        <h2 class="cmp-bento-card__title" data-sly-test="${properties.title}">${properties.title}</h2>
+        <div class="cmp-bento-card__description" data-sly-test="${properties.description}">${properties.description @ context='html'}</div>
+        <a class="cmp-bento-card__cta" data-sly-test="${properties.ctaLink || properties.ctaText}" href="${properties.ctaLink @ context='uri'}">
+            <span data-sly-test="${properties.ctaText}">${properties.ctaText}</span><span aria-hidden="true">&#8594;</span>
+        </a>
+    </div>
+</article>

@@ -205,6 +205,63 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_footer>
             </experiencefragment>
+            <bento-container jcr:primaryType="nt:unstructured">
+                <policy
+                    jcr:description="Allows Bento Cards inside the Bento Container."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Bento Container"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[/apps/demoproject/components/bento-card]">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy>
+            </bento-container>
+            <bento-card jcr:primaryType="nt:unstructured">
+                    <policy
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Bento Card"
+                        sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <group
+                                cq:styleGroupLabel="Bento Card Variations"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+
+    <standard
+        cq:styleId="bento-card-standard"
+        cq:styleClasses="bento-card--standard"
+        cq:styleLabel="Standard"
+        jcr:primaryType="nt:unstructured"/>
+
+    <featured
+        cq:styleId="bento-card-featured"
+        cq:styleClasses="bento-card--featured"
+        cq:styleLabel="Featured"
+        jcr:primaryType="nt:unstructured"/>
+
+    <image
+        cq:styleId="bento-card-image"
+        cq:styleClasses="bento-card--image"
+        cq:styleLabel="Image"
+        jcr:primaryType="nt:unstructured"/>
+
+    <compact
+        cq:styleId="bento-card-compact"
+        cq:styleClasses="bento-card--compact"
+        cq:styleLabel="Compact"
+        jcr:primaryType="nt:unstructured"/>
+
+    <action
+        cq:styleId="bento-card-action"
+        cq:styleClasses="bento-card--action"
+        cq:styleLabel="Action"
+        jcr:primaryType="nt:unstructured"/>
+
+</cq:styles>
+                            </group>
+                        </cq:styleGroups>
+                    </policy>
+            </bento-card>
             <container jcr:primaryType="nt:unstructured">
                 <policy_1574694950110
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."

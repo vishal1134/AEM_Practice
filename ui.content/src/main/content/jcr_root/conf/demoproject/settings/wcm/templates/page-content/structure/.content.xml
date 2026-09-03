@@ -28,6 +28,13 @@
                     editable="{Boolean}true"
                     layout="responsiveGrid"/>
             </container>
+            <bento_container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="demoproject/components/bento-container">
+                <bento_card
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="demoproject/components/bento-card"/>
+            </bento_container>
             <experiencefragment-footer
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="demoproject/components/experiencefragment"

@@ -1,0 +1,652 @@
+/* =========================================================
+   BENTO CARD - BASE
+   ========================================================= */
+
+.bento-card {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.cmp-bento-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    border: 1px solid #e0e0e0;
+    border-radius: 24px;
+
+    background: #ffffff;
+    color: #202020;
+}
+
+
+/* =========================================================
+   IMAGE - BASE
+   ========================================================= */
+
+.cmp-bento-card__image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.cmp-bento-card__image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   CONTENT - BASE
+   ========================================================= */
+
+.cmp-bento-card__content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    min-width: 0;
+    box-sizing: border-box;
+
+    padding: 24px;
+}
+
+.cmp-bento-card__eyebrow {
+    margin: 0 0 8px;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.cmp-bento-card__title {
+    margin: 0 0 10px;
+
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.cmp-bento-card__description {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.cmp-bento-card__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    margin-top: auto;
+    padding-top: 20px;
+
+    color: inherit;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+.cmp-bento-card__cta:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   STANDARD
+   ========================================================= */
+
+.bento-card--standard .cmp-bento-card {
+    background: #f3f3f3;
+    color: #202020;
+    border-color: transparent;
+}
+
+.bento-card--standard .cmp-bento-card__content {
+    justify-content: flex-end;
+}
+
+/* =========================================================
+   STANDARD - ARROW
+   ========================================================= */
+
+.bento-card--standard .cmp-bento-card__cta {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 36px;
+    height: 36px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #202020;
+    color: #ffffff;
+
+    font-size: 0;
+    text-decoration: none;
+}
+
+.bento-card--standard .cmp-bento-card__cta span[aria-hidden="true"] {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* =========================================================
+   FEATURED
+   ---------------------------------------------------------
+   IMPORTANT:
+   The image itself fills the entire card.
+   The CSS does NOT create the red background.
+   ========================================================= */
+
+.bento-card--featured .cmp-bento-card {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    border: none;
+    border-radius: 24px;
+
+    background: #202020;
+    color: #ffffff;
+}
+
+
+/* Full-card image */
+
+.bento-card--featured .cmp-bento-card__image {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.bento-card--featured .cmp-bento-card__image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* Subtle readability overlay */
+
+.bento-card--featured .cmp-bento-card::after {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    content: "";
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.08) 0%,
+        rgba(0, 0, 0, 0) 45%,
+        rgba(0, 0, 0, 0.18) 100%
+    );
+
+    pointer-events: none;
+}
+
+
+/* Content over image */
+
+.bento-card--featured .cmp-bento-card__content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* Featured eyebrow */
+
+.bento-card--featured .cmp-bento-card__eyebrow {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+/* Featured title */
+
+.bento-card--featured .cmp-bento-card__title {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+
+/* Featured description */
+
+.bento-card--featured .cmp-bento-card__description {
+    max-width: 280px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+/* Featured CTA */
+
+.bento-card--featured .cmp-bento-card__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: auto;
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+    color: #202020;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+
+/* Phone icon for Featured */
+
+.bento-card--featured .cmp-bento-card__cta::before {
+    content: "☎";
+
+    font-size: 13px;
+    line-height: 1;
+}
+
+
+/* Hide existing arrow for Featured */
+
+.bento-card--featured .cmp-bento-card__cta span[aria-hidden="true"] {
+    display: none;
+}
+
+.bento-card--featured .cmp-bento-card__cta:hover {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   IMAGE
+   ---------------------------------------------------------
+   Full-image card with content over the image.
+   ========================================================= */
+
+.bento-card--image .cmp-bento-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border: none;
+    border-radius: 24px;
+
+    background: #202020;
+    color: #ffffff;
+}
+
+
+/* Full image */
+
+.bento-card--image .cmp-bento-card__image {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.bento-card--image .cmp-bento-card__image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* Dark image overlay */
+
+.bento-card--image .cmp-bento-card::after {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    content: "";
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.05)
+    );
+
+    pointer-events: none;
+}
+
+
+/* Content */
+
+.bento-card--image .cmp-bento-card__content {
+    position: relative;
+
+    z-index: 2;
+
+    justify-content: flex-end;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    color: #ffffff;
+}
+
+.bento-card--image .cmp-bento-card__eyebrow,
+.bento-card--image .cmp-bento-card__title,
+.bento-card--image .cmp-bento-card__description,
+.bento-card--image .cmp-bento-card__cta {
+    color: #ffffff;
+}
+
+/* =========================================================
+   IMAGE - ARROW
+   ========================================================= */
+
+.bento-card--image .cmp-bento-card__cta {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 36px;
+    height: 36px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #202020;
+
+    font-size: 0;
+    text-decoration: none;
+}
+
+.bento-card--image .cmp-bento-card__cta span[aria-hidden="true"] {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* =========================================================
+   COMPACT
+   ========================================================= */
+
+.bento-card--compact .cmp-bento-card {
+    border-radius: 16px;
+
+    background: #f3f3f3;
+    color: #202020;
+
+    border-color: transparent;
+}
+
+.bento-card--compact .cmp-bento-card__content {
+    padding: 16px;
+    justify-content: flex-end;
+}
+
+.bento-card--compact .cmp-bento-card__eyebrow {
+    margin-bottom: 4px;
+
+    font-size: 10px;
+}
+
+.bento-card--compact .cmp-bento-card__title {
+    margin-bottom: 6px;
+
+    font-size: 18px;
+}
+
+.bento-card--compact .cmp-bento-card__description {
+    font-size: 14px;
+}
+
+.bento-card--compact .cmp-bento-card__cta {
+    padding-top: 12px;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   COMPACT - ARROW
+   ========================================================= */
+
+.bento-card--compact .cmp-bento-card__cta {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    width: 32px;
+    height: 32px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #202020;
+    color: #ffffff;
+
+    font-size: 0;
+    text-decoration: none;
+}
+
+.bento-card--compact .cmp-bento-card__cta span[aria-hidden="true"] {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* =========================================================
+   ACTION
+   ========================================================= */
+
+.bento-card--action .cmp-bento-card {
+    background: #f3f3f3;
+    color: #202020;
+
+    border-color: transparent;
+}
+
+.bento-card--action .cmp-bento-card__content {
+    padding: 16px;
+    justify-content: center;
+}
+
+.bento-card--action .cmp-bento-card__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+/* Action arrow */
+
+.bento-card--action .cmp-bento-card__cta {
+    position: absolute;
+
+    top: 50%;
+    right: 16px;
+
+    width: 32px;
+    height: 32px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: #202020;
+    color: #ffffff;
+
+    font-size: 0;
+    text-decoration: none;
+}
+
+.bento-card--action .cmp-bento-card__cta span[aria-hidden="true"] {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 16px;
+    line-height: 1;
+}
+
+.bento-card--action .cmp-bento-card__cta:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .cmp-bento-card__content {
+        padding: 20px;
+    }
+
+    .bento-card--featured .cmp-bento-card__content {
+        padding: 24px;
+    }
+
+    .bento-card--featured .cmp-bento-card__title {
+        font-size: 20px;
+    }
+}

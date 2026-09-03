@@ -1,0 +1,17 @@
+<div class="cmp-bento-container">
+
+    <div class="cmp-bento-container__header">
+        <p class="cmp-bento-container__pretitle"
+           data-sly-test="${properties.pretitle}">
+            ${properties.pretitle}
+        </p>
+
+        <h2 class="cmp-bento-container__title"
+            data-sly-test="${properties.title}">
+            ${properties.title}
+        </h2>
+    </div>
+
+    <sly data-sly-resource="${resource @ resourceType='core/wcm/components/container/v1/container'}"></sly>
+
+</div>

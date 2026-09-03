@@ -11,6 +11,15 @@
             cq:policy="demoproject/components/container/policy_1574694950110"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/core/components/policies/mapping">
+            <bento_container
+                cq:policy="demoproject/components/bento-container/policy"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/core/components/policies/mapping">
+                <bento_card
+                    cq:policy="demoproject/components/bento-card/policy"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/core/components/policies/mapping"/>
+            </bento_container>
             <experiencefragment-header
                 cq:policy="demoproject/components/experiencefragment/policy_header"
                 jcr:primaryType="nt:unstructured"
@@ -55,6 +64,10 @@
                                 cq:policy="demoproject/components/download/policy_1575032193319"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="wcm/core/components/policies/mapping"/>
+                                <bento-card
+    cq:policy="demoproject/components/bento-card/policy"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/core/components/policies/mapping"/>
                         </components>
                     </demoproject>
                 </container>
